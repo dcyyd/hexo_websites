@@ -1392,7 +1392,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #f5a114;
+    background: #c6a81b;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3044,6 +3044,9 @@ header.header {
   .sidebar {
     display: none;
   }
+}
+.powered-by {
+  display: none;
 }
 .main-inner {
   opacity: 0.8;

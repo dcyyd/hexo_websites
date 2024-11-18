@@ -73,18 +73,13 @@
 ]]></content>
   </entry>
   <entry>
-    <title>分类</title>
-    <url>/hexo_websites/2020/11/24/categories/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>关于</title>
     <url>/hexo_websites/2020/11/24/about/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>标签</title>
-    <url>/hexo_websites/2020/11/24/tags/</url>
+    <title>分类</title>
+    <url>/hexo_websites/2020/11/24/categories/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -104,5 +99,10 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>标签</title>
+    <url>/hexo_websites/2020/11/24/tags/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>

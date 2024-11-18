@@ -15,4 +15,13 @@
     <url>https://dcyyd.github.io/hexo_websites/2020/11/24/tags/</url>
     <content><![CDATA[]]></content>
   </entry>
+  <entry>
+    <title>Site_Testing</title>
+    <url>https://dcyyd.github.io/hexo_websites/2024/11/18/Site-Testing/</url>
+    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;网站维护更新中，敬请期待&lt;/title&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">*&#123;</span><br><span class="line"> margin:0;</span><br><span class="line"> padding:0;</span><br><span class="line"> &#125;</span><br><span class="line">html&#123;</span><br><span class="line"> height:100%;</span><br><span class="line"> &#125;</span><br><span class="line">body&#123;</span><br><span class="line"> background:#F1FDFE;</span><br><span class="line"> height:100%;</span><br><span class="line"> &#125;</span><br><span class="line">.mom&#123;</span><br><span class="line"> width:600px;</span><br><span class="line"> height:100px;</span><br><span class="line"> line-height:100px;</span><br><span class="line"> text-align:center;</span><br><span class="line"> font-size:30px;</span><br><span class="line"> border-width:5px;</span><br><span class="line"> border-style:dashed;</span><br><span class="line"> border-color:rgb(200, 0, 255);</span><br><span class="line"> position:relative; left:50%;</span><br><span class="line"> margin-left:-300px; top:50%;</span><br><span class="line"> margin-top:-50px;</span><br><span class="line"> background:#e6fafd;</span><br><span class="line"> color:rgb(255, 0, 55);</span><br><span class="line"> &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class=&quot;mom&quot;&gt;</span><br><span class="line"> 网站维护更新维护中,敬请期待....</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>test</tag>
+      </tags>
+  </entry>
 </search>

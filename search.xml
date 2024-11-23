@@ -12,7 +12,7 @@
   <entry>
     <title>网络工程师考试知识点_01</title>
     <url>https://dcyyd.github.io/hexo_websites/2024/11/23/Networking-Knowledge-Points-01/</url>
-    <content><![CDATA[<h4 id="一、计算机存储与中断相关"><a href="#一、计算机存储与中断相关" class="headerlink" title="一、计算机存储与中断相关"></a><strong>一、计算机存储与中断相关</strong></h4><ol>
+    <content><![CDATA[<h4 id="一、计算机存储与中断相关"><a href="#一、计算机存储与中断相关" class="headerlink" title="一、计算机存储与中断相关"></a><strong>一、计算机存储与中断相关</strong><span id="more"></span></h4><ol>
 <li>常用的虚拟存储器由<strong>主存 - 辅存</strong>两级存储器组成。</li>
 <li>中断向量可提供<strong>中断程序的入口地址</strong>。</li>
 <li>DMA工作方式在<strong>主存与外设</strong>之间建立直接的数据通信。</li>

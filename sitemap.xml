@@ -11,6 +11,24 @@
   </url>
   
   <url>
+    <loc>https://dcyyd.github.io/categories/index.html</loc>
+    
+    <lastmod>2024-12-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://dcyyd.github.io/tags/index.html</loc>
+    
+    <lastmod>2024-12-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://dcyyd.github.io/2024/11/24/Networking-Knowledge-Points-02/</loc>
     
     <lastmod>2024-11-24</lastmod>
@@ -37,6 +55,48 @@
   </url>
 
   
+  <url>
+    <loc>https://dcyyd.github.io/tags/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%B8%88/</loc>
+    <lastmod>2024-12-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://dcyyd.github.io/tags/%E8%80%83%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9/</loc>
+    <lastmod>2024-12-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://dcyyd.github.io/tags/about/</loc>
+    <lastmod>2024-12-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://dcyyd.github.io/tags/%E5%85%B3%E4%BA%8E%E6%88%91/</loc>
+    <lastmod>2024-12-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
+  
+  <url>
+    <loc>https://dcyyd.github.io/categories/%E7%BD%91%E5%B7%A5/</loc>
+    <lastmod>2024-12-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://dcyyd.github.io/categories/About/</loc>
+    <lastmod>2024-12-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
 </urlset>

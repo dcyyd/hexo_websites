@@ -1423,7 +1423,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #c706c2;
+    background: #79d071;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -3172,4 +3172,23 @@ header.header {
 .my_post_copyright .copy-path:hover {
   color: #808080;
   cursor: pointer;
+}
+body {
+  background: url("https://tse4-mm.cn.bing.net/th/id/OIP-C.8_Opwdl1vWYMhIP6J2cJiwHaEK?rs=1&pid=ImgDetMain");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.content-wrap {
+  opacity: 0.9;
+}
+.sidebar {
+  opacity: 0.9;
+}
+.header-inner {
+  background: rgba(255,255,255,0.9);
+}
+.popup {
+  opacity: 0.9;
 }

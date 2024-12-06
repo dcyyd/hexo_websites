@@ -6,6 +6,7 @@
   border-radius: 50%;
   border: none;
   right: unset;
+  position: inherit;
   bottom: 200px;
   left: 32px;
   cursor: pointer;
@@ -1418,7 +1419,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #85cc41;
+    background: #37fa77;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);

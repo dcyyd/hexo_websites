@@ -1,5 +1,5 @@
 .back-to-top {
-  border-radius: 0 0 20px 20px;
+  border-radius: 0 0 50px 50px;
 }
 :root {
   --body-bg-color: #eee;
@@ -1268,7 +1268,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #45cb94;
+    background: #ff7003;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);

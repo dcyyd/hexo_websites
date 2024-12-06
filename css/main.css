@@ -1,15 +1,18 @@
 .back-to-top.back-to-top-on {
-  border-radius: 50px; /* 设置圆角半径为10px，你可按需调整数值大小来改变圆角程度 */
-  background-color: #000; /* 背景为黑色且20%透明，rgba格式用于指定颜色及透明度 */
-  width: 40px; /* 设置元素宽度为50px，可根据实际布局需求修改 */
-  height: 40px; /* 设置元素高度为50px，可按需更改 */
-  display: flex; /* 使用flex布局方便内部内容的对齐等（如果有内部元素的话），可按需选择布局方式 */
-  justify-content: center; /* 水平居中内部元素（如果有） */
-  align-items: center; /* 垂直居中内部元素（如果有） */
-  cursor: pointer; /* 鼠标悬停时变为手型指针，表示可点击 */
-  transition: all 0.3s ease; /* 添加过渡效果，当元素属性改变（比如背景色、尺寸等）时会有平滑过渡，时间是0.3秒，过渡效果为缓动 */
-  position: relative;
-  bottom: 100px;
+  background: #100f2c;
+  width: 3rem;
+  height: 3rem;
+  position: fixed;
+  border-radius: 50%;
+  border: none;
+  right: unset;
+  bottom: 64px;
+  left: 32px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 :root {
   --body-bg-color: #eee;
@@ -1436,7 +1439,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #c763ff;
+    background: #f9f7be;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);

@@ -1129,4 +1129,152 @@
         <tag>考试知识点</tag>
       </tags>
   </entry>
+  <entry>
+    <title>基于GitHub+hexo部署静态Blog</title>
+    <url>https://dcyyd.github.io/hexo_websites/2024/12/07/%E5%9F%BA%E4%BA%8EGitHub-hexo%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81Blog/</url>
+    <content><![CDATA[<h3 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a><strong>一、前言</strong></h3><p>本文详细介绍了如何使用Hexo框架搭建一个个人博客，并将其部署到GitHub Pages上。主要内容包括：</p>
+<ul>
+<li><strong>环境准备：</strong>安装Node.js和Git</li>
+<li><strong>配置Git和GitHub：</strong>设置SSH密钥，创建GitHub仓库</li>
+<li><strong>初始化Hexo项目：</strong>安装Hexo，创建新博客</li>
+<li><strong>部署到GitHub Pages：</strong>配置部署设置，推送静态文件</li>
+<li><strong>基本使用方法：</strong>创建新文章，本地预览，发布更新</li>
+</ul>
+<p>这个教程适合那些想要快速搭建个人博客，但又不想花费太多成本的人。通过使用Hexo和GitHub的免费服务，您可以轻松创建一个高效、简洁的博客网站。</p>
+<h3 id="二、事前准备"><a href="#二、事前准备" class="headerlink" title="二、事前准备"></a><strong>二、事前准备</strong></h3><ol>
+<li><h4 id="在线支持"><a href="#在线支持" class="headerlink" title="在线支持"></a><strong>在线支持</strong></h4><ul>
+<li><strong>域名注册 | 雨云</strong>：（非必须，你也可以使用免费域名，或者<code>GitHub.io</code>或<code>Pages.dev</code>分配的域名也可以）</li>
+<li><a href="https://github.com/"><strong>GitHub</strong></a>：（必须，你需要注册一个 GitHub 帐号）</li>
+<li><a href="https://dash.cloudflare.com/"><strong>Cloudflare</strong></a>：（非必须，你需要注册一个 Cloudflare 帐号，这样你就可以将博客部署在 CF 的<strong>CDN</strong>里加速，但是你也可以直接使用<code>GitHub.io</code>分配的域名）</li>
+</ul>
+</li>
+<li><h4 id="软件支持"><a href="#软件支持" class="headerlink" title="软件支持"></a><strong>软件支持</strong></h4><ul>
+<li><a href="https://blog.kingxujw.com/2024/10/07/%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2/#2-1-%E5%AE%89%E8%A3%85-Node"><strong>Node</strong></a>：（必须，Nodejs 是一个基于<strong>Chrome V8</strong>引擎的<strong>JS</strong>运行环境，可以用<strong>JS</strong>写服务器和前端代码。）</li>
+<li><a href="https://blog.kingxujw.com/2024/10/07/%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2/#2-2-%E5%AE%89%E8%A3%85-Git"><strong>Git</strong></a>：（必须，Git 是当前最先进、最主流的<strong>分布式</strong>版本控制系统，免费、开源）</li>
+<li><a href="https://gohugo.io/"><strong>Hugo</strong></a>：（必须，Hugo 是用<strong>Go</strong>语言写的静态网站生成器（Static Site Generator），可以把 Markdown 文件转化成 HTML 文件）</li>
+<li><a href="https://dcloud.io/hbuilderx.html"><strong>HBuilderX</strong></a>：（非必须，HBuilderX 是一款为<strong>Vue</strong>开发精心打造的超强集成开发环境（<strong>IDE</strong>））</li>
+</ul>
+</li>
+</ol>
+<h3 id="三、软件安装"><a href="#三、软件安装" class="headerlink" title="三、软件安装"></a><strong>三、软件安装</strong></h3><ol>
+<li><h4 id="安装-Node"><a href="#安装-Node" class="headerlink" title="安装 Node"></a><strong>安装 Node</strong></h4><ul>
+<li><p>打开<a href="https://nodejs.org/zh-cn/download/prebuilt-installer"><strong>Node.js</strong></a>官网，下载和自己系统相配的Node的安装程序，否则会出现安装问题</p>
+</li>
+<li><p>下载后安装，安装的目录可以使用默认目录<code>C:/Program Files/nodejs/</code></p>
+</li>
+<li><p>安装完成后，检查是否安装成功。在键盘按下win + R键，输入CMD，然后回车，打开CMD窗口，执行<code>node -v</code>命令，看到版本信息，则说明安装成功</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Users\Administrator&gt;node -v</span><br><span class="line">v20.18.0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改npm源。npm下载各种模块，默认是从国处服务器下载，速度较慢，建议配置成华为云镜像源。打开CMD窗口，运行如下命令:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm config set registry https://mirrors.huaweicloud.com/repository/npm/</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><h4 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a><strong>安装 Git</strong></h4><ul>
+<li><p>进入<a href="https://git-scm.com/downloads/win"><strong>Git</strong></a>官网下载适合你当前系统的版本</p>
+</li>
+<li><p>下载后傻瓜式安装Git即可，安装的目录最好使用默认目录<code>C:/Program Files/Git</code></p>
+</li>
+<li><p>按win + R键，输入CMD，然后回车，打开CMD窗口，执行<code>git -v</code>命令，看到版本信息，则说明安装成功</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Users\Administrator&gt;git -v</span><br><span class="line">git version 2.42.0.windows.2</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>Git组件：</strong></p>
+<p><strong><code>Git CMD</code></strong> 是windows 命令行的指令风格</p>
+<p><strong><code>Git Bash</code></strong> 是linux系统的指令风格（建议使用）</p>
+<p>**<code>Git GUI</code>**是图形化界面（新手学习不建议使用）</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="四、配置-Git-密钥并连接至-Github"><a href="#四、配置-Git-密钥并连接至-Github" class="headerlink" title="四、配置 Git 密钥并连接至 Github"></a><strong>四、配置 Git 密钥并连接至 Github</strong></h3><ol>
+<li><h4 id="常用-Git-命令："><a href="#常用-Git-命令：" class="headerlink" title="常用 Git 命令："></a><strong>常用 Git 命令：</strong></h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config -l	//查看所有配置</span><br><span class="line">git config --system --list	//查看系统配置</span><br><span class="line">git config --global --list	//查看用户（全局）配置</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="配置用户名和邮箱："><a href="#配置用户名和邮箱：" class="headerlink" title="配置用户名和邮箱："></a><strong>配置用户名和邮箱：</strong></h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;你的用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的邮箱&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="配置公钥连接-Github："><a href="#配置公钥连接-Github：" class="headerlink" title="配置公钥连接 Github："></a><strong>配置公钥连接 Github：</strong></h4><ul>
+<li><p><strong>生成ssh公钥</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;你的邮箱&quot;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>id_rsa</code>私钥</p>
+<p><code>id_rsa.pub</code>公钥</p>
+</blockquote>
+</li>
+</ul>
+<p> 用记事本打开上述图片中的公钥<code>id_rsa.pub</code>，复制里面的内容，然后开始在github中配置ssh密钥。</p>
+<ul>
+<li><p><strong>将 SSH KEY 配置到 GitHub</strong>  </p>
+<ul>
+<li>进入github，点击右上角头像 选择<code>settings</code>，进入设置页后选择 <code>SSH and GPG keys</code>，名字随便起，公钥填到<code>Key</code>那一栏。</li>
+</ul>
+</li>
+<li><p><strong>测试连接，输入以下命令</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -T [email protected]</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p> 第一次连接会提示<code>Are you sure you want to continue connecting (yes/no/[fingerprint])?</code>，输入<code>yes</code>即可<br> 出现连接到账户的信息，说明已经大功告成，至此完成了环境准备工作。</p>
+</li>
+<li><h4 id="创建GitHub-io仓库"><a href="#创建GitHub-io仓库" class="headerlink" title="创建GitHub.io仓库"></a><strong>创建GitHub.io仓库</strong></h4><ul>
+<li><p>注册登录<a href="https://github.com/"><strong>GitHub</strong></a></p>
+</li>
+<li><p>点击右上角的<code>+</code>按钮，选择<strong>New repository</strong>，创建一个<code>&lt;用户名&gt;.github.io</code>的仓库。</p>
+</li>
+<li><p>仓库名字的格式必须为：<code>&lt;用户名&gt;.github.io</code> (注意：前缀必须为用户名，此为预览博客需要，后期可修改仓库名)</p>
+</li>
+<li><p>可见性必须选择 <code>Public</code> 方便第一次部署检查问题，点击 <strong>Creat repository</strong> 进行创建即可</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="五、初始化-Hexo-博客"><a href="#五、初始化-Hexo-博客" class="headerlink" title="五、初始化 Hexo 博客"></a><strong>五、初始化 Hexo 博客</strong></h3><ol>
+<li><p>创建一个文件夹来保存博客源码（我这里选的路径为<code>D:/Hexo-Blog</code>），在文件夹内右键鼠标，选择<code>Open Git Bash here</code></p>
+</li>
+<li><p>在<code>Git BASH</code>输入如下命令安装 Hexo</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli &amp;&amp; hexo -v</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装完后输入<code>hexo -v</code>验证是否安装成功。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">C:\Users\Administrator&gt;hexo -v</span><br><span class="line">hexo-cli: 4.3.2</span><br><span class="line">os: win32 10.0.22631 undefined</span><br><span class="line">node: 20.18.0</span><br><span class="line">acorn: 8.12.1</span><br><span class="line">ada: 2.9.0</span><br><span class="line">ares: 1.33.1</span><br><span class="line">base64: 0.5.2</span><br><span class="line">brotli: 1.1.0</span><br><span class="line">cjs_module_lexer: 1.4.1</span><br><span class="line">cldr: 45.0</span><br><span class="line">icu: 75.1</span><br><span class="line">llhttp: 8.1.2</span><br><span class="line">modules: 115</span><br><span class="line">napi: 9</span><br><span class="line">nghttp2: 1.61.0</span><br><span class="line">nghttp3: 0.7.0</span><br><span class="line">ngtcp2: 1.1.0</span><br><span class="line">openssl: 3.0.13+quic</span><br><span class="line">simdutf: 5.5.0</span><br><span class="line">tz: 2024a</span><br><span class="line">undici: 6.19.8</span><br><span class="line">unicode: 15.1</span><br><span class="line">uv: 1.46.0</span><br><span class="line">uvwasi: 0.0.21</span><br><span class="line">v8: 11.3.244.8-node.23</span><br><span class="line">zlib: 1.3.0.1-motley-71660e1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初始化 Hexo 项目安装相关依赖。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init blog-demo //创建项目</span><br><span class="line">cd blog-demo //切换路径</span><br><span class="line">npm i //安装依赖</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初始化项目后，<code>blog-demo</code>有如下结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">blog-demo</span><br><span class="line">├── node_modules //依赖包</span><br><span class="line">├── scaffolds //生成文章的一些模板</span><br><span class="line">├── source //用来存放你的文章</span><br><span class="line">├── themes //主题</span><br><span class="line">├──.npmignore //发布时忽略的文件（可忽略）</span><br><span class="line">├── _config.landscape.yml //主题的配置文件</span><br><span class="line">├── config.yml //博客的配置文件</span><br><span class="line">└── package.json //项目名称、描述、版本、运行和开发等信息</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>命令行输入<code>hexo cl &amp;&amp; hexo s</code>启动项目</p>
+</li>
+<li><p>打开浏览器，输入地址：<a href="http://localhost:4000/"><code>http://localhost:4000/</code></a> ，看到欢迎界面，说明你的博客已经构建成功了。</p>
+</li>
+</ol>
+<h3 id="六、将静态博客挂载到-GitHub-Pages"><a href="#六、将静态博客挂载到-GitHub-Pages" class="headerlink" title="六、将静态博客挂载到 GitHub Pages"></a><strong>六、将静态博客挂载到 GitHub Pages</strong></h3><ol>
+<li><p>安装 hexo-deployer-git</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改 <code>_config.yml</code> 文件<br>在blog-demo目录下的_config.yml，就是整个Hexo框架的配置文件，详细可参考官方的<a href="https://hexo.io/zh-cn/docs/configuration">配置描述</a><br>修改最后一行的配置，将repository修改为你自己的github项目地址即可，还有分支要改为<code>main</code>代表主分支（注意缩进）。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:  </span><br><span class="line">    type: git</span><br><span class="line">    repository: [email protected]:kingmoon3/kingmoon3.github.io.git</span><br><span class="line">    branch: main</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改好配置后，运行如下命令，将代码部署到 GitHub（Hexo三连）。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// Git BASH终端</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>**<code>hexo clean</code>**：删除之前生成的文件，可以用<code>hexo cl</code>缩写。</p>
+<p>**<code>hexo generate</code>**：生成静态文章，可以用<code>hexo g</code>缩写</p>
+<p>**<code>hexo deploy</code>**：部署文章，可以用<code>hexo d</code>缩写</p>
+</blockquote>
+</li>
+</ol>
+<p><em>注意：deploy时可能要你输入 username 和 password。</em></p>
+<p>如果出现<strong>Deploy done</strong>，则说明部署成功了。</p>
+<p>稍等两分钟，打开浏览器访问：<a href="https://kingmoon3.github.io/">https://kingmoon3.github.io</a> ，这时候我们就可以看到博客内容了。</p>
+]]></content>
+      <categories>
+        <category>网站部署</category>
+      </categories>
+      <tags>
+        <tag>网站部署</tag>
+        <tag>GitHub</tag>
+        <tag>Hexo</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
 </search>

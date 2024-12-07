@@ -505,14 +505,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.6k</span>
+      <span>5.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
+      <span>5 分钟</span>
     </span>
 </div>
 
@@ -534,9 +534,8 @@
 <p>这个教程适合那些想要快速搭建个人博客，但又不想花费太多成本的人。通过使用Hexo和GitHub的免费服务，您可以轻松创建一个高效、简洁的博客网站。</p>
 <h3 id="二、事前准备"><a href="#二、事前准备" class="headerlink" title="二、事前准备"></a><strong>二、事前准备</strong></h3><ol>
 <li><h4 id="在线支持"><a href="#在线支持" class="headerlink" title="在线支持"></a><strong>在线支持</strong></h4><ul>
-<li><strong>域名注册 | 雨云</strong>：（非必须，你也可以使用免费域名，或者<code>GitHub.io</code>或<code>Pages.dev</code>分配的域名也可以）</li>
+<li><a target="_blank" rel="noopener" href="https://app.rainyun.com/"><strong>域名注册 | 雨云</strong></a>：（非必须，你也可以使用免费域名，或者<code>GitHub.io</code>或<code>Pages.dev</code>分配的域名也可以）</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/"><strong>GitHub</strong></a>：（必须，你需要注册一个 GitHub 帐号）</li>
-<li><a target="_blank" rel="noopener" href="https://dash.cloudflare.com/"><strong>Cloudflare</strong></a>：（非必须，你需要注册一个 Cloudflare 帐号，这样你就可以将博客部署在 CF 的<strong>CDN</strong>里加速，但是你也可以直接使用<code>GitHub.io</code>分配的域名）</li>
 </ul>
 </li>
 <li><h4 id="软件支持"><a href="#软件支持" class="headerlink" title="软件支持"></a><strong>软件支持</strong></h4><ul>
@@ -655,8 +654,157 @@
 </li>
 </ol>
 <p><em>注意：deploy时可能要你输入 username 和 password。</em></p>
-<p>如果出现<strong>Deploy done</strong>，则说明部署成功了。</p>
-<p>稍等两分钟，打开浏览器访问：<a target="_blank" rel="noopener" href="https://kingmoon3.github.io/">https://kingmoon3.github.io</a> ，这时候我们就可以看到博客内容了。</p>
+<p>如果出现 **<code>INFO  Deploy done: git</code>**，则说明部署成功了。</p>
+<p>稍等两分钟，打开浏览器访问：<a target="_blank" rel="noopener" href="https://你的github用户名.github.io/">https:&#x2F;&#x2F;[你的github用户名].github.io</a> ，这时候我们就可以看到博客内容了。</p>
+<h3 id="附：GitHub网站部署常用命令："><a href="#附：GitHub网站部署常用命令：" class="headerlink" title="附：GitHub网站部署常用命令："></a>附：GitHub网站部署常用命令：</h3><ol>
+<li><h4 id="Git相关："><a href="#Git相关：" class="headerlink" title="Git相关："></a>Git相关：</h4></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>git init</code></td>
+<td>在当前目录初始化一个Git仓库</td>
+<td><code>git init my_project</code>（在<code>my_project</code>目录下初始化仓库）</td>
+</tr>
+<tr>
+<td><code>git clone [url]</code></td>
+<td>克隆远程仓库到本地</td>
+<td><code>git clone https://github.com/user/repo.git</code>（克隆指定仓库）</td>
+</tr>
+<tr>
+<td><code>git status</code></td>
+<td>查看仓库中文件的状态</td>
+<td>在仓库目录下执行<code>git status</code>查看文件修改、暂存等状态</td>
+</tr>
+<tr>
+<td><code>git add [file/dir]</code></td>
+<td>将文件或目录添加到暂存区</td>
+<td><code>git add file.txt</code>（添加单个文件），<code>git add.</code>（添加当前目录下所有文件）</td>
+</tr>
+<tr>
+<td><code>git commit -m &quot;[message]&quot;</code></td>
+<td>提交暂存区的内容，并添加提交消息</td>
+<td><code>git commit -m &quot;Update README&quot;</code>（提交并添加消息）</td>
+</tr>
+<tr>
+<td><code>git branch</code></td>
+<td>查看本地分支列表</td>
+<td>执行<code>git branch</code>查看当前仓库的分支情况</td>
+</tr>
+<tr>
+<td><code>git branch [branch - name]</code></td>
+<td>创建一个新的本地分支</td>
+<td><code>git branch new_branch</code>（创建名为<code>new_branch</code>的分支）</td>
+</tr>
+<tr>
+<td><code>git checkout [branch - name]</code></td>
+<td>切换到指定分支</td>
+<td><code>git checkout master</code>（切换到<code>master</code>分支）</td>
+</tr>
+<tr>
+<td><code>git merge [branch - name]</code></td>
+<td>合并指定分支到当前分支</td>
+<td>假设在<code>master</code>分支，<code>git merge feature_branch</code>（合并<code>feature_branch</code>）</td>
+</tr>
+<tr>
+<td><code>git log</code></td>
+<td>查看提交历史</td>
+<td>执行<code>git log</code>查看之前的提交记录，包括作者、日期、消息等</td>
+</tr>
+<tr>
+<td><code>git remote add [name] [url]</code></td>
+<td>添加远程仓库</td>
+<td><code>git remote add origin https://github.com/user/repo.git</code>（添加名为<code>origin</code>的远程仓库）</td>
+</tr>
+<tr>
+<td><code>git push [remote - name] [branch - name]</code></td>
+<td>将本地分支推送到远程仓库</td>
+<td><code>git push origin master</code>（推送<code>master</code>分支到<code>origin</code>）</td>
+</tr>
+<tr>
+<td><code>git pull [remote - name] [branch - name]</code></td>
+<td>从远程仓库拉取并合并更新</td>
+<td><code>git pull origin master</code>（拉取<code>master</code>分支更新）</td>
+</tr>
+<tr>
+<td><code>git diff [file]</code></td>
+<td>查看文件的修改差异</td>
+<td><code>git diff file.txt</code>（查看<code>file.txt</code>的修改差异）</td>
+</tr>
+<tr>
+<td><code>git stash</code></td>
+<td>暂存当前工作区的修改</td>
+<td>在未完成的修改状态下，执行<code>git stash</code>暂存修改</td>
+</tr>
+<tr>
+<td><code>git stash pop</code></td>
+<td>恢复暂存的修改</td>
+<td>执行<code>git stash pop</code>恢复之前暂存的修改</td>
+</tr>
+<tr>
+<td><code>git tag [tag - name]</code></td>
+<td>给当前提交打标签</td>
+<td><code>git tag v1.0</code>（给当前提交打<code>v1.0</code>标签）</td>
+</tr>
+<tr>
+<td><code>git show [tag - name]</code></td>
+<td>查看标签相关的提交信息</td>
+<td><code>git show v1.0</code>查看<code>v1.0</code>标签对应的提交内容</td>
+</tr>
+</tbody></table>
+<ol start="2">
+<li><h4 id="Hexo相关："><a href="#Hexo相关：" class="headerlink" title="Hexo相关："></a>Hexo相关：</h4></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>hexo init [folder]</code></td>
+<td>初始化一个 Hexo 项目，可选参数<code>[folder]</code>指定项目文件夹名称。</td>
+<td><code>hexo init my-blog</code>（在当前目录下创建名为<code>my-blog</code>的 Hexo 项目）</td>
+</tr>
+<tr>
+<td><code>hexo new [layout] &lt;title&gt;</code></td>
+<td>创建一篇新文章，<code>[layout]</code>是布局模板，<code>&lt;title&gt;</code>是文章标题。</td>
+<td><code>hexo new post &quot;My New Post&quot;</code>（创建一篇新的<code>post</code>布局的文章）</td>
+</tr>
+<tr>
+<td><code>hexo generate</code>或<code>hexo g</code></td>
+<td>生成静态文件。</td>
+<td>执行该命令会根据主题模板生成 HTML、CSS、JS 等静态文件到<code>public</code>目录。</td>
+</tr>
+<tr>
+<td><code>hexo server</code>或<code>hexo s</code></td>
+<td>启动本地服务器进行预览。</td>
+<td>在本地浏览器中输入<code>http://localhost:4000</code>可查看生成的博客效果。</td>
+</tr>
+<tr>
+<td><code>hexo clean</code></td>
+<td>清除之前生成的静态文件和缓存。</td>
+<td>当遇到生成问题或切换主题后可先执行此命令。</td>
+</tr>
+<tr>
+<td><code>hexo deploy</code>或<code>hexo d</code></td>
+<td>部署博客到指定平台。</td>
+<td>配置好后执行该命令可将静态文件推送到远程仓库等部署目标。</td>
+</tr>
+<tr>
+<td><code>hexo list &lt;type&gt;</code></td>
+<td>列出特定类型的内容，如<code>post</code>（文章）、<code>page</code>（页面）等。</td>
+<td><code>hexo list post</code>列出所有文章信息。</td>
+</tr>
+</tbody></table>
 
       
     </div>
@@ -1003,14 +1151,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">27k</span>
+    <span title="站点总字数">29k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">25 分钟</span>
+    <span title="站点阅读时长">26 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
